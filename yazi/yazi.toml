@@ -1,0 +1,4 @@
+[opener]
+extract = [
+  { run = 'unrar x "$1"', desc = "Extract with unrar" }
+]

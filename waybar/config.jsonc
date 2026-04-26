@@ -1,0 +1,153 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 32,
+    "margin-top": 10,
+    "margin-left": 10,
+    "margin-right": 10,
+    "spacing": 8,
+
+    "modules-left": [
+        "hyprland/workspaces",
+		"custom/media"
+    ],
+
+    "modules-center": [
+        "hyprland/window"
+    ],
+
+    "modules-right": [
+        "tray",
+        "idle_inhibitor",
+        "pulseaudio",
+        "backlight",
+        "network",
+		"group/hardware", // Ini adalah grup drawer kita
+        // "cpu",
+        // "memory",
+        // "temperature",
+        "battery",
+        "clock"
+    ],
+
+	"custom/media": {
+	  "format": "{icon} {text}",
+	  "return-type": "json",
+	  "max-length": 40,
+	  "format-icons": {
+	    "default": "󰎆 "
+	  },
+	  "exec": "bash -c 'playerctl metadata --format \"{{artist}} - {{title}}\" 2>/dev/null | jq -R -c \"{text: . , tooltip: .}\"'",
+	  "interval": 2,
+	  "on-click": "playerctl play-pause",
+	  "on-scroll-up": "playerctl next",
+	  "on-scroll-down": "playerctl previous"
+	},	
+
+    "hyprland/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+			"1": "一",
+			"2": "二",
+			"3": "三",
+			"4": "四",
+			"5": "五",
+			"6": "六",
+			"7": "七",
+			"8": "八",
+			"9": "九",
+			"10": "十",
+        }
+    },
+
+	"hyprland/window": {
+		"format": "{}",
+		"max-length": 40,
+		"min-length": 40
+	},
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "{:%A, %d %B %Y}"
+    },
+
+	"battery": {
+		"states": {
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "{icon} {capacity}%",
+		"format-charging": "󱐋 {capacity}%",
+		"format-plugged": " {capacity}%",
+		"format-alt": "{icon} {time}",
+		"format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+	},
+
+    "network": {
+        "format-wifi": "  {essid}",
+        "format-ethernet": "󰈀 ",
+        "format-disconnected": "󰤭 "
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰖁 ",
+        "format-icons": {
+            "default": ["", " ", " "]
+        }
+    },
+
+	"backlight": {
+		"device": "intel_backlight",
+		"format": "{icon} {percent}%",
+		"format-icons": ["󰃞 ", "󰃟 ", "󰃠 "],
+		"on-scroll-up": "brightnessctl set +5%",
+		"on-scroll-down": "brightnessctl set 5%-"
+	}, 
+
+	"cpu": {
+		"format": "󰻠 {usage}%",
+		"tooltip": true
+	},
+
+	"memory": {
+		"format": "󰍛 {percentage}%",
+		"tooltip": true
+	},
+
+	"temperature": {
+		"format": " {temperatureC}°C",
+		"critical-threshold": 80,
+		"format-critical": " {temperatureC}°C"
+	},
+
+	"group/hardware": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/system", // Ikon pemicu
+            "cpu",
+            "memory",
+            "temperature"
+        ]
+    },
+
+    "custom/system": {
+        "format": "󰍛 ",
+        "tooltip": false
+    },
+
+	"idle_inhibitor": {
+		"format": "{icon}",
+		"format-icons": {
+			"activated": "󰈈 ",
+			"deactivated": "󰈉 "
+		}
+	}
+}

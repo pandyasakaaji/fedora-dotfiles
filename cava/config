@@ -1,0 +1,9 @@
+[general]
+bars = 30
+framerate = 60
+
+[input]
+method = pulse
+
+[output]
+method = ncurses

@@ -1,0 +1,89 @@
+* {
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 13px;
+}
+
+/* MAIN BAR */
+window#waybar {
+  background: rgba(20, 22, 30, 0.55);
+  border-radius: 18px;
+  border: 1px solid rgba(122, 162, 247, 0.15);
+  color: #c0caf5;
+}
+
+/* WORKSPACES */
+#workspaces {
+  margin: 1px 7px;
+}
+
+#workspaces button {
+  padding: 4px 10px;
+  margin: 7px 3px;
+  border-radius: 13px;
+  color: #7aa2f7;
+  background: transparent;
+}
+
+#workspaces button.active {
+  border-radius: 50%;
+  padding-right: 8px;
+  background: rgba(122, 162, 247, 0.25);
+  color: #ffffff;
+}
+
+#workspaces button:hover {
+  background: rgba(122, 162, 247, 0.15);
+}
+
+/* MODULES */
+#custom-media,
+#clock,
+#battery,
+#network,
+#backlight,
+#pulseaudio,
+#custom-system,
+#idle_inhibitor {
+  font-size: 14px;
+  padding: 0 10px;
+  margin: 7px 1px;
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+#cpu,
+#memory,
+#temperature {
+  padding: 0 10px;
+  margin: 7px 1px;
+}
+
+#clock {
+  background: rgba(122, 162, 247, 0.5);
+  margin-right: 8px;
+}
+
+#custom-system {
+  border-radius: 50%;
+  padding-right: 8px;
+  padding-left: 13px;
+  background: rgba(122, 162, 247, 0.5);
+}
+
+#idle_inhibitor {
+  border-radius: 50%;
+  padding-right: 9px;
+  padding-left: 12px;
+  background: rgba(122, 162, 247, 0.5);
+}
+
+tooltip {
+  background: rgba(122, 162, 247, 0.5);
+  border: none;
+  border-radius: 10px;
+}
+
+tooltip label {
+  color: #c0caf5;
+  padding: 8px;
+}
