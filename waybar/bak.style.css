@@ -13,7 +13,7 @@ window#waybar {
 
 #custom-logo {
   font-size: 24px;
-  padding: 4px 22px 4px 12px;
+  padding: 4px 20px 4px 12px;
   background: rgba(122, 162, 247, 0.5);
   border-radius: 18px 18px 18px 18px;
 }

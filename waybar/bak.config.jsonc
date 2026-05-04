@@ -38,19 +38,17 @@
 	},
 
 	"custom/media": {
-		"format": "{icon} {text}",
-		"return-type": "json",
-		"max-length": 40,
-		"escape": true, 
-		"format-icons": {
+        "format": "{icon} {text}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
 			"default": "󰎆 "
-		},
-		// jq akan membuat JSON dengan field 'text' dan 'tooltip' yang isinya sama
-		"exec": "playerctl -a metadata --format '{{artist}} - {{title}}' --follow | jq --unbuffered --compact-output --raw-input '{text: ., tooltip: .}'",
-		"on-click": "playerctl play-pause",
-		"on-scroll-up": "playerctl next",
-		"on-scroll-down": "playerctl previous"
-	},
+        },
+        "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{title}}\", \"tooltip\": \"{{playerName}}: {{artist}} - {{title}}\"}' --follow",
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous"
+    },
 
     "hyprland/workspaces": {
         "disable-scroll": false,
