@@ -5,9 +5,9 @@
 
 /* MAIN BAR */
 window#waybar {
-  background: rgba(20, 22, 30, 0.55);
+  background: rgba(20, 22, 30, 0);
   border-radius: 18px;
-  border: 1px solid rgba(122, 162, 247, 0.15);
+  /* border: 1px solid rgba(122, 162, 247, 0.15); */
   color: #c0caf5;
 }
 
@@ -27,14 +27,16 @@ window#waybar {
   padding: 4px 10px;
   margin: 7px 3px;
   border-radius: 13px;
-  color: #7aa2f7;
+  color: #c0caf5;
   background: transparent;
 }
 
 #workspaces button.active {
-  border-radius: 50%;
+  border-radius: 33%;
   padding-right: 8px;
-  background: rgba(122, 162, 247, 0.25);
+  border-top: 2px solid rgba(122, 162, 247, 0.5);
+  border-bottom: 2px solid rgba(122, 162, 247, 0.5);
+  /* background: rgba(122, 162, 247, 0.5); */
   color: #ffffff;
 }
 
@@ -55,7 +57,7 @@ window#waybar {
   padding: 0 10px;
   margin: 7px 1px;
   border-radius: 13px;
-  background: rgba(255, 255, 255, 0.04);
+  background-color: rgba(46, 52, 64, 0.2);
 }
 
 #cpu,
@@ -81,7 +83,9 @@ window#waybar {
 }
 
 #clock {
-  background: rgba(122, 162, 247, 0.5);
+  border-top: 2px solid rgba(122, 162, 247, 0.5);
+  border-bottom: 2px solid rgba(122, 162, 247, 0.5);
+  background: rgba(122, 162, 247, 0);
   margin-right: 8px;
 }
 
@@ -110,10 +114,10 @@ window#waybar {
 
 #privacy-item,
 #tray-item,
-#tray > .passive,
-#tray > .active,
-#tray > .needs-attention {
-  padding: 0 4px;
+#tray>.passive,
+#tray>.active,
+#tray>.needs-attention {
+  padding: 0;
 }
 
 #privacy-item.audio-in {
