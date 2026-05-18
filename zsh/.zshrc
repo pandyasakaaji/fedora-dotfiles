@@ -113,7 +113,7 @@ bindkey "^H" backward-kill-word
 #fastfetch -c examples/9.jsonc
 #fastfetch -c examples/13.jsonc
 
-bash "$HOME/Dev/Ascii Opening/ascii_color_rainbow.sh"
+# bash "$HOME/Dev/Ascii Opening/ascii_color_rainbow.sh"
 
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
