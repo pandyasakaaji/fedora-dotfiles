@@ -9,7 +9,7 @@ if status is-interactive
 
     # Optional startup commands
 	# fastfetch -c examples/12
-	fastfetch -c examples/28
+	# fastfetch -c examples/28
 	# fastfetch -c examples/29
     # cbonsai -L 18 -M 2
     # fastfetch -c examples/9.jsonc
@@ -26,3 +26,5 @@ set -gx LIBVA_DRIVER_NAME iHD
 # Aliases
 alias prime-run='__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia'
 alias safessh='TERM=xterm-256color ssh'
+alias d-off="sudo systemctl stop docker.service docker.socket && sudo systemctl disable docker.service docker.socket"
+alias d-on="sudo systemctl enable docker.service docker.socket && sudo systemctl start docker.service"
