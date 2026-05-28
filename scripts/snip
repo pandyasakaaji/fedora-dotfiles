@@ -1,0 +1,10 @@
+#!/bin/bash
+
+DIR="$HOME/Pictures/Screenshots"
+mkdir -p "$DIR"
+
+FILE="$DIR/snip-$(date +%F-%H%M%S).png"
+
+grimblast --freeze copysave area "$FILE"
+
+[ -f "$FILE" ] && swappy -f "$FILE"
