@@ -7,4 +7,10 @@ FILE="$DIR/snip-$(date +%F-%H%M%S).png"
 
 grimblast --freeze copysave area "$FILE"
 
-[ -f "$FILE" ] && swappy -f "$FILE"
+if [ -f "$FILE" ]; then
+  notify-send "Screenshot Saved" \
+    "$(basename "$FILE")" \
+    -i "$FILE"
+
+  swappy -f "$FILE"
+fi
