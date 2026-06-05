@@ -9,7 +9,7 @@
 	"modules-left": [
 		// "custom/logo",
 		"custom/media",
-		"hyprland/workspaces",
+		"hyprland/workspaces"
 	],
 	"modules-center": [
 		"hyprland/window"
@@ -21,16 +21,16 @@
 		"pulseaudio",
 		"backlight",
 		"network",
-		// "group/hardware", // Ini adalah grup drawer kita
+		// "group/hardware",
 		// "cpu",
 		// "memory",
 		// "temperature",
 		"battery",
-		"clock",
+		"clock"
 	],
 	"custom/logo": {
 		"format": "",
-		"tooltip": "false",
+		"tooltip": "false"
 	},
 	"custom/media": {
 		"format": "{icon} {text}",
@@ -38,13 +38,12 @@
 		"max-length": 40,
 		"escape": true,
 		"format-icons": {
-			"default": "󰎆 ",
+			"default": "󰎆 "
 		},
-		// jq akan membuat JSON dengan field 'text' dan 'tooltip' yang isinya sama
 		"exec": "playerctl -a metadata --format '{{artist}} - {{title}}' --follow | jq --unbuffered --compact-output --raw-input '{text: ., tooltip: .}'",
 		"on-click": "playerctl play-pause",
 		"on-scroll-up": "playerctl next",
-		"on-scroll-down": "playerctl previous",
+		"on-scroll-down": "playerctl previous"
 	},
 	"hyprland/workspaces": {
 		"disable-scroll": false,
@@ -60,17 +59,17 @@
 			"7": "七",
 			"8": "八",
 			"9": "九",
-			"10": "十",
-		},
+			"10": "十"
+		}
 	},
 	"hyprland/window": {
 		"format": "{}",
 		"max-length": 40,
-		"min-length": 40,
+		"min-length": 40
 	},
 	"clock": {
 		"format": "{:%H:%M}",
-		"tooltip-format": "{:%A, %d %B %Y}",
+		"tooltip-format": "{:%A, %d %B %Y}"
 	},
 	"privacy": {
 		"icon-spacing": 10,
@@ -78,22 +77,22 @@
 		"nodes": [
 			{
 				"type": "audio-in",
-				"active-indicator": true,
+				"active-indicator": true
 			},
 			{
 				"type": "camera",
-				"active-indicator": true,
+				"active-indicator": true
 			},
 			{
 				"type": "screenshare",
-				"active-indicator": true,
-			},
-		],
+				"active-indicator": true
+			}
+		]
 	},
 	"battery": {
 		"states": {
 			"warning": 30,
-			"critical": 20,
+			"critical": 20
 		},
 		"format": "{icon} {capacity}%",
 		"format-charging": "󱐋 {capacity}%",
@@ -111,12 +110,12 @@
 			"󰂁",
 			"󰂂",
 			"󰁹"
-		],
+		]
 	},
 	"network": {
 		"format-wifi": "  {essid}",
 		"format-ethernet": "󰈀 ",
-		"format-disconnected": "󰤭 ",
+		"format-disconnected": "󰤭 "
 	},
 	"pulseaudio": {
 		"format": "{icon} {volume}%",
@@ -126,8 +125,8 @@
 				"",
 				" ",
 				" "
-			],
-		},
+			]
+		}
 	},
 	"backlight": {
 		"device": "intel_backlight",
@@ -138,44 +137,44 @@
 			"󰃠 "
 		],
 		"on-scroll-up": "brightnessctl set +5%",
-		"on-scroll-down": "brightnessctl set 5%-",
+		"on-scroll-down": "brightnessctl set 5%-"
 	},
 	"cpu": {
 		"format": "󰻠 {usage}%",
-		"tooltip": true,
+		"tooltip": true
 	},
 	"memory": {
 		"format": "󰍛 {percentage}%",
-		"tooltip": true,
+		"tooltip": true
 	},
 	"temperature": {
 		"format": " {temperatureC}°C",
 		"critical-threshold": 80,
-		"format-critical": " {temperatureC}°C",
+		"format-critical": " {temperatureC}°C"
 	},
 	"group/hardware": {
 		"orientation": "horizontal",
 		"drawer": {
 			"transition-duration": 500,
 			"children-class": "not-power",
-			"transition-left-to-right": false,
+			"transition-left-to-right": false
 		},
 		"modules": [
-			"custom/system", // Ikon pemicu
+			"custom/system",
 			"cpu",
 			"memory",
-			"temperature",
-		],
+			"temperature"
+		]
 	},
 	"custom/system": {
 		"format": "󰍛 ",
-		"tooltip": false,
+		"tooltip": false
 	},
 	"idle_inhibitor": {
 		"format": "{icon}",
 		"format-icons": {
 			"activated": "󰈈 ",
-			"deactivated": "󰈉 ",
-		},
-	},
+			"deactivated": "󰈉 "
+		}
+	}
 }
