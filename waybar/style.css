@@ -68,27 +68,38 @@ window#waybar {
 }
 
 /* BATTERY WARNING */
-@keyframes blink {
+@keyframes battery-blink {
+  from {
+    background: rgba(191, 97, 106, 0.45);
+    /* box-shadow: */
+    /*   inset 0 0 12px rgba(191, 97, 106, 0.4), */
+    /*   0 0 15px rgba(191, 97, 106, 0.35); */
+  }
+
   to {
-    background: rgba(191, 97, 106, 0.15);
+    background: rgba(191, 97, 106, 0.10);
+    box-shadow: none;
   }
 }
 
 #battery.critical:not(.charging) {
-  background-color: #BF616A;
-  animation-name: blink;
-  animation-duration: 0.7s;
-  animation-timing-function: steps(12);
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+  color: #ECEFF4;
+  border: 1px solid rgba(191, 97, 106, 0.9);
+
+  animation: battery-blink 0.8s ease-in-out infinite alternate;
 }
 
 /* CLOCK */
 #clock {
-  border-top: 2px solid rgba(94, 129, 172, 0.8);
-  border-bottom: 2px solid rgba(129, 161, 193, 0.8);
-  background: transparent;
+  /* border-top: 2px solid rgba(94, 129, 172, 0.8); */
+  /* border-bottom: 2px solid rgba(129, 161, 193, 0.8); */
   margin-right: 8px;
+  background: rgba(94, 129, 172, 0.25);
+  border: 1px solid rgba(129, 161, 193, 0.9);
+  box-shadow:
+    inset 0 0 8px rgba(94, 129, 172, 0.3),
+    0 0 10px rgba(94, 129, 172, 0.2);
+  color: #ECEFF4;
 }
 
 /* SYSTEM BUTTON */
