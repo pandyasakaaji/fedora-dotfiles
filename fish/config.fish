@@ -1,3 +1,9 @@
+if status is-login
+    and test "$XDG_VTNR" = "1"
+    and not set -q WAYLAND_DISPLAY
+    exec start-hyprland >/dev/null 2>&1
+end
+
 if status is-interactive
     # Interactive-only commands
 
