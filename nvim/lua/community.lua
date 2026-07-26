@@ -20,7 +20,7 @@ return {
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.pack.python" },
-  { import = "astrocommunity.pack.docker" },
+  -- { import = "astrocommunity.pack.docker" }, -- disabled: not in use
 
   -- =======================================================================
   -- 2. MODERN UI & EXTRA UTILITIES

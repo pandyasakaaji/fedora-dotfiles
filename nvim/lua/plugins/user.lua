@@ -10,11 +10,8 @@ return {
   -- == Examples of Adding Plugins ==
 
   "andweeb/presence.nvim",
-  {
-    "ray-x/lsp_signature.nvim",
-    event = "BufRead",
-    config = function() require("lsp_signature").setup() end,
-  },
+  -- lsp_signature.nvim: disabled, redundant with blink.cmp signature help
+  { "ray-x/lsp_signature.nvim", enabled = false },
 
   -- == Examples of Overriding Plugins ==
 

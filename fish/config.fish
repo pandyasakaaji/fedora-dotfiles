@@ -34,3 +34,6 @@ alias prime-run='__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia'
 alias safessh='TERM=xterm-256color ssh'
 alias d-off="sudo systemctl stop docker.service docker.socket && sudo systemctl disable docker.service docker.socket"
 alias d-on="sudo systemctl enable docker.service docker.socket && sudo systemctl start docker.service"
+
+# opencode
+fish_add_path /home/kisaragi/.opencode/bin
