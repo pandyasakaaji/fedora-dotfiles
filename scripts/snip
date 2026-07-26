@@ -5,12 +5,15 @@ mkdir -p "$DIR"
 
 FILE="$DIR/snip-$(date +%F-%H%M%S).png"
 
-grimblast --freeze copysave area "$FILE"
+hyprpicker -rz &
+PICKER_PID=$!
+sleep 0.2
 
-if [ -f "$FILE" ]; then
-  notify-send "Screenshot Saved" \
-    "$(basename "$FILE")" \
-    -i "$FILE"
+AREA=$(slurp) || { kill $PICKER_PID; exit 1; }
+kill $PICKER_PID
 
-  swappy -f "$FILE"
-fi
+grim -g "$AREA" "$FILE"
+
+wl-copy < "$FILE" &
+notify-send "Screenshot Saved" "$(basename "$FILE")" -i "$FILE" &
+swappy -f "$FILE"
