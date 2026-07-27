@@ -13,6 +13,9 @@ if status is-interactive
     # Atuin
     atuin init fish | source
 
+    # fnm
+    fnm env --use-on-cd | source
+
     # Optional startup commands
 	# fastfetch -c examples/12
 	# fastfetch -c examples/28
