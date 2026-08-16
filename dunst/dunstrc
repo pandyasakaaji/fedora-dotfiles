@@ -1,6 +1,8 @@
 [global]
     font = JetBrainsMono Nerd Font 10
 
+    monitor = eDP-1
+    follow = none
     origin = top-right
     offset = 20x20
 
