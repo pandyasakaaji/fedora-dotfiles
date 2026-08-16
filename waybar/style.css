@@ -89,7 +89,8 @@ window#waybar {
   animation: battery-blink 0.8s ease-in-out infinite alternate;
 }
 
-#custom-media, #network {
+#custom-media,
+#network {
   font-style: italic;
 }
 
@@ -122,6 +123,7 @@ window#waybar {
   border: 1px solid rgba(94, 129, 172, 0.8);
   background-color: rgba(59, 66, 82, 0.3);
 }
+
 #idle_inhibitor.activated {
   background: rgba(94, 129, 172, 0.25);
   border: 1px solid rgba(129, 161, 193, 0.9);
@@ -146,9 +148,9 @@ window#waybar {
 
 #privacy-item,
 #tray-item,
-#tray > .passive,
-#tray > .active,
-#tray > .needs-attention {
+#tray>.passive,
+#tray>.active,
+#tray>.needs-attention {
   padding: 0;
 }
 
